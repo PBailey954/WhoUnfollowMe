@@ -1,3 +1,7 @@
+// Prevent the browser from opening the file when dropped outside of drop zones
+window.addEventListener("dragover", (e) => e.preventDefault());
+window.addEventListener("drop", (e) => e.preventDefault());
+
 document.addEventListener("DOMContentLoaded", () => {
     // Expand/Collapse logic
     document.querySelectorAll(".expand-btn").forEach(button => {
@@ -32,3 +36,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 4000);
     });
 });
+
+function setupDragAndDrop(inputId) {
+    const input = document.getElementById(inputId);
+    const wrapper = input.closest(".file-drop-zone");
+
+    wrapper.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        wrapper.classList.add("drag-over");
+    });
+
+    wrapper.addEventListener("dragleave", () => {
+        wrapper.classList.remove("drag-over");
+    });
+
+    wrapper.addEventListener("drop", (e) => {
+        e.preventDefault();
+        wrapper.classList.remove("drag-over");
+
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            input.files = files;
+        }
+    });
+}
+
+setupDragAndDrop("followers");
+setupDragAndDrop("following");

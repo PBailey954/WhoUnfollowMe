@@ -12,17 +12,28 @@
     <div class="container">
         <h1>Who Unfollowed Me</h1>
         <form id="uploadForm" method="post" enctype="multipart/form-data">
-            <div class="file-inputs">
-                <label>Followers JSON File</label>
-                <input type="file" class="form-control" name="followers" required>
-                <label>Following JSON File</label>
-                <input type="file" class="form-control" name="following" required>
-            </div>
-            <button type="submit" class="btn btn-gradient">Analyze</button>
-            <div id="progress-bar-container">
-          <div id="progress-bar"></div>
-        </div>
-        </form>
+<div class="file-drop-zone" data-target="followers">
+  <label for="followers">Followers JSON File</label>
+  <div class="drag-box">
+    <input type="file" id="followers" name="followers" required />
+    <p>Drag & drop file here or click to browse</p>
+  </div>
+</div>
+
+            <div class="file-drop-zone" data-target="following">
+  <label for="following">Following JSON File</label>
+  <div class="drag-box">
+    <input type="file" id="following" name="following" required />
+    <p>Drag & drop file here or click to browse</p>
+  </div>
+</div>
+
+  <button type="submit" class="btn btn-gradient">Analyze</button>
+
+  <div id="progress-bar-container">
+    <div id="progress-bar"></div>
+  </div>
+</form>
 
 
         {% if results %}

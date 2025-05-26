@@ -17,8 +17,8 @@ input[type="file"]::file-selector-button {
     background: linear-gradient(to right, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     border: none;
     color: white;
-    border-radius:15px;
-    ...
+    border-radius:5px;
+    padding: 0.5rem;
 }
 h1 {
     text-align: center;
@@ -43,6 +43,13 @@ input[type="file"] {
     border: none;
     border-radius: 5px;
     background-color: white;
+}
+
+.drop-text {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 
@@ -169,6 +176,40 @@ input[type="file"] {
     transition: width 4s ease;
 }
 
+.file-inputs.drag-over {
+    background-color: #fbe9f0;
+    border: 2px dashed #cc2366;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.file-drop-zone.drag-over {
+    background-color: #fce8ef;
+    border: 2px dashed #dc2743;
+    border-radius: 6px;
+    padding: 15px;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.file-drop-zone input[type="file"] {
+    background: transparent;
+    border: none;
+}
+.drag-box {
+  border: 2px dashed #dc2743;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff5f9;
+  text-align: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.file-drop-zone.drag-over .drag-box {
+  background-color: #ffeaf1;
+  border-color: #cc2366;
+  box-shadow: 0 0 10px rgba(204, 35, 102, 0.2);
+  transform: scale(1.02);
+}
 
 /*    Media stuff          */
 @media (min-width: 900px) {
