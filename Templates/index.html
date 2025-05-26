@@ -48,7 +48,7 @@
         {% if results %}
             <div class="results">
                 <div class="result-section">
-                    <h2>Who's not following you back 👀</h2>
+                   <h2><i class="bi bi-person-x-fill"></i> Who's not following you back</h2>
                     <div class="expandable">
   <ul id="not-following-back">
     {% for user in results['not_following_back'] %}
@@ -61,7 +61,7 @@
 </div>
                 </div>
                 <div class="result-section">
-                    <h2>Followers You Don’t Follow Back</h2>
+                    <h2><i class="bi bi-person-plus-fill"></i> Followers You Don’t Follow Back</h2>
                     <div class="expandable">
   <ul id="not-followed-back">
     {% for user in results['not_followed_back'] %}
@@ -74,7 +74,7 @@
 </div>
                 </div>
                 <div class="result-section">
-                    <h2>Mutual Followers</h2>
+                    <h2><i class="bi bi-people-fill"></i> Mutual Followers</h2>
                     <div class="expandable">
   <ul id="mutuals">
     {% for user in results['mutuals'] %}
