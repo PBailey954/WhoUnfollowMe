@@ -115,6 +115,26 @@ input[type="file"] {
     opacity: 0.95;
 }
 
+/* Instagram Style theme button */
+.btn-instagram:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.btn-instagram {
+    background: linear-gradient(to right, #4c68d7, #5f8eed);
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .expand-btn {
     display: block;

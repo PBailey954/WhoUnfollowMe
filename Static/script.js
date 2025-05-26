@@ -57,6 +57,10 @@ function setupDragAndDrop(inputId) {
         const files = e.dataTransfer.files;
         if (files.length > 0) {
             input.files = files;
+            const fileNameDisplay = wrapper.querySelector("p");
+if (fileNameDisplay && files.length > 0) {
+    fileNameDisplay.textContent = files[0].name;
+}
         }
     });
 }
